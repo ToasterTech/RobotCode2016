@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.TalonSRX;
+import edu.wpi.first.wpilibj.Joystick;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -15,6 +17,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
     final String defaultAuto = "Default";
     final String customAuto = "My Auto";
+    private TalonSRX driveL1 = new TalonSRX(1);
+    private TalonSRX driveL2 = new TalonSRX(2);
+    private TalonSRX driveR1 = new TalonSRX(3);
+    private TalonSRX driveR2 = new TalonSRX(4);
+
+    private Gamepad js;
+    
     String autoSelected;
     SendableChooser chooser;
 	
@@ -27,6 +36,8 @@ public class Robot extends IterativeRobot {
         chooser.addDefault("Default Auto", defaultAuto);
         chooser.addObject("My Auto", customAuto);
         SmartDashboard.putData("Auto choices", chooser);
+        
+        js = new Gamepad(1);
     }
     
 	/**
@@ -63,7 +74,10 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        
+    	driveL1.set(js.getYLeft());
+    	driveL2.set(js.getYLeft());
+    	driveR1.set(js.getYRight());
+    	driveR2.set(js.getYRight());
     }
     
     /**
