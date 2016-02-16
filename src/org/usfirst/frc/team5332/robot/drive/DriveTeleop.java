@@ -15,12 +15,25 @@ public class DriveTeleop extends DriveCommandLayer {
 		// TODO Auto-generated method stub
 		systemLayer.setDriveHardwareLeft(driveGamepad.getYLeft());
 		systemLayer.setDriveHardwareRight(driveGamepad.getYRight());
+		if(driveGamepad.getButton(0)){
+			if(systemLayer.getDistanceForward()<24){
+				systemLayer.gyroCorrectedDriveStraight();
+			}else{
+				systemLayer.setDriveHardwareLeft(0);
+				systemLayer.setDriveHardwareRight(0);
+			}
+		}
 	}
 
 	@Override
 	public void setChild(DriveSystemLayer c) {
 		// TODO Auto-generated method stub
 		systemLayer=c;
+	}
+	@Override
+	public void robotInit() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

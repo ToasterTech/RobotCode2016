@@ -17,4 +17,8 @@ public class Gamepad {
 	public double getYRight(){
 		return js.getRawAxis(2);
 	}
+	
+	public boolean getButton(int type){
+		return(true);
+	}
 }
