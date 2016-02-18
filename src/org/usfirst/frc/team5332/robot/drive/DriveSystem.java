@@ -12,8 +12,8 @@ public class DriveSystem extends DriveSystemLayer {
 	private PID gyroControllerR;
 	
 	public DriveSystem (){
-		gyroControllerL = new PID();
-		gyroControllerR = new PID();
+		gyroControllerL = new PID(1,1);
+		gyroControllerR = new PID(1,1);
 	}
 	
 	@Override

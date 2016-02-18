@@ -19,6 +19,6 @@ public class Gamepad {
 	}
 	
 	public boolean getButton(int type){
-		return(true);
+		return(js.getRawButton(type));
 	}
 }
