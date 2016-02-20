@@ -32,5 +32,11 @@ public class IntakeTeleop extends IntakeCommandLayer{
 	public void robotInit() {
 		
 	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

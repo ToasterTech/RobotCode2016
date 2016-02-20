@@ -86,4 +86,10 @@ public class DriveHardwareRoboRio extends DriveHardwareLayer{
 		return ticksPerRevolution;
 	}
 
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

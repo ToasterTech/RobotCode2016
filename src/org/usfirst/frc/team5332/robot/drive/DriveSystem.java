@@ -51,4 +51,10 @@ public class DriveSystem extends DriveSystemLayer {
 		double averageDistance = (lEncoderCounts + rEncoderCounts)/2;
 		return ((averageDistance*(Math.PI*6))/hardwareLayer.getTicksPerRevolution());
 	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

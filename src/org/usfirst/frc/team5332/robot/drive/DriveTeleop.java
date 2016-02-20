@@ -5,7 +5,6 @@ import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 import org.usfirst.frc.team5332.robot.drive.base.DriveSystemLayer;
 
 public class DriveTeleop extends DriveCommandLayer {
-	private DriveSystemLayer systemLayer;
 	private Gamepad driveGamepad;
 	public DriveTeleop(){
 		driveGamepad = new Gamepad(0);
@@ -34,6 +33,11 @@ public class DriveTeleop extends DriveCommandLayer {
 	public void robotInit() {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

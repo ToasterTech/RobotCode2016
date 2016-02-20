@@ -14,4 +14,7 @@ public class Subsystem {
 		this.systemLayer.runPeriodic();
 		this.hardwareLayer.runPeriodic();
 	}
+	public void setCommandLayer(Layer<?> c){
+		commandLayer=c;
+	}
 }

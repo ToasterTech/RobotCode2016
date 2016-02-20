@@ -67,4 +67,10 @@ public class IntakeSystem extends IntakeSystemLayer {
 		isStopped = false;
 		isIntaking = false;
 	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

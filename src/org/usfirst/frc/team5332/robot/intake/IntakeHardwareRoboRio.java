@@ -56,4 +56,10 @@ public class IntakeHardwareRoboRio extends IntakeHardwareLayer {
 		return intakeMotor.get();
 	}
 
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
