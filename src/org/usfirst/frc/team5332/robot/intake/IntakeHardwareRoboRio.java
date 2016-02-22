@@ -9,6 +9,8 @@ public class IntakeHardwareRoboRio extends IntakeHardwareLayer {
 
 	private TalonSRX intakeMotor;
 	private Solenoid intakePiston;
+	private Solenoid intakePiston2;
+
 	private boolean isExtended;
 	private double intakeSpeed;
 	
@@ -16,12 +18,15 @@ public class IntakeHardwareRoboRio extends IntakeHardwareLayer {
 	public void runPeriodic() {
 		intakeMotor.set(intakeSpeed);
 		intakePiston.set(isExtended);
+		intakePiston2.set(isExtended);
+
 	}
 
 	@Override
 	public void robotInit() {
-		intakeMotor = new TalonSRX(5);
+		intakeMotor = new TalonSRX(7);
 		intakePiston = new Solenoid(0);
+		intakePiston2 = new Solenoid(1);
 		isExtended = false;
 		intakeSpeed = 0.0;
 	}

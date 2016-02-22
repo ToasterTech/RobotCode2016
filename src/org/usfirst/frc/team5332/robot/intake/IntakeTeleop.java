@@ -8,24 +8,36 @@ public class IntakeTeleop extends IntakeCommandLayer{
 	
 	private IntakeSystemLayer systemLayer;
 	private Gamepad gamepad;
-	
+	private boolean intakeDown;
+	private boolean lastButton;
+	public IntakeTeleop(){
+		gamepad=new Gamepad(0);
+		lastButton=false;
+		intakeDown=false;
+	}
 	@Override
 	public void setChild(IntakeSystemLayer c) {
 		 systemLayer = c;
+		 
 	}
 
 	@Override
 	public void runPeriodic() {
-		if(gamepad.getButton(1)) // These are generic button values and should probably not be kept. Ever.
+		boolean dropIntakeButton=gamepad.getButton(5);
+		if((dropIntakeButton&&!lastButton)){
+			intakeDown=!intakeDown;
+		}
+		lastButton=dropIntakeButton;
+		if(intakeDown){
 			systemLayer.dropIntake();
-		if(gamepad.getButton(2))
+		}else
 			systemLayer.raiseIntake();
-		if(gamepad.getButton(3))
+		if(gamepad.getTriggerLeft())
 			systemLayer.runIntake();
-		if(gamepad.getButton(4))
-			systemLayer.stopIntake();
-		if(gamepad.getButton(5))
+		else if(gamepad.getTriggerRight())
 			systemLayer.runOuttake();
+		else
+			systemLayer.stopIntake();
 	}
 
 	@Override

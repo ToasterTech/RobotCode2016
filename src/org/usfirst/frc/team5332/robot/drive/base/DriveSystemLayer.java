@@ -11,6 +11,7 @@ public abstract class DriveSystemLayer implements Layer<DriveHardwareLayer>{
 	public abstract void setChild(DriveHardwareLayer c);
 	public abstract void setDriveHardwareLeft(double LArg);
 	public abstract void setDriveHardwareRight(double RArg);
+	public abstract void gyroReset();
 	public abstract void gyroCorrectedDriveStraight();
 	public abstract double getDistanceForward();
 }

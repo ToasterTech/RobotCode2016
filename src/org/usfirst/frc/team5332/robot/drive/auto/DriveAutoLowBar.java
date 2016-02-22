@@ -1,4 +1,4 @@
-package org.usfirst.frc.team5332.robot.drive;
+package org.usfirst.frc.team5332.robot.drive.auto;
 
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 import org.usfirst.frc.team5332.robot.drive.base.DriveSystemLayer;

@@ -3,9 +3,9 @@ package autoselect;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.usfirst.frc.team5332.robot.drive.DriveAutoHingedRamps;
-import org.usfirst.frc.team5332.robot.drive.DriveAutoLowBar;
-import org.usfirst.frc.team5332.robot.drive.DriveAutoRoughTerrain;
+import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoHingedRamps;
+import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoLowBar;
+import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoRoughTerrain;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeCommandLayer;
 

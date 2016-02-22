@@ -31,10 +31,10 @@ public class DriveHardwareRoboRio extends DriveHardwareLayer{
 	
 	@Override
 	public void runPeriodic() {
-		driveLeft1.set(leftSide);
-		driveLeft2.set(leftSide);
-		driveRight1.set(-rightSide);
-		driveRight2.set(-rightSide);
+		driveLeft1.set(-leftSide);
+		driveLeft2.set(-leftSide);
+		driveRight1.set(rightSide);
+		driveRight2.set(rightSide);
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public class DriveHardwareRoboRio extends DriveHardwareLayer{
 	@Override
 	public void robotInit() {
 		// TODO Auto-generated method stub
-		
+		gyro.calibrate();
 	}
 
 	@Override

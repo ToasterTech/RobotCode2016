@@ -19,6 +19,8 @@ public class DriveSystem extends DriveSystemLayer {
 	@Override
 	public void runPeriodic() {
 		// TODO Auto-generated method stub
+		System.out.println("Gyro Angle "+this.hardwareLayer.getAngle());
+
 		hardwareLayer.setDriveLeft(l);
 		hardwareLayer.setDriveRight(r);
 	}
@@ -51,10 +53,17 @@ public class DriveSystem extends DriveSystemLayer {
 		double averageDistance = (lEncoderCounts + rEncoderCounts)/2;
 		return ((averageDistance*(Math.PI*6))/hardwareLayer.getTicksPerRevolution());
 	}
+	
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void gyroReset() {
+		// TODO Auto-generated method stub
+		this.hardwareLayer.resetGyro();
 	}
 }

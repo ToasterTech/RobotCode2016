@@ -1,9 +1,9 @@
-package org.usfirst.frc.team5332.robot.drive;
+package org.usfirst.frc.team5332.robot.drive.auto;
 
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 import org.usfirst.frc.team5332.robot.drive.base.DriveSystemLayer;
 
-public class DriveAutoRoughTerrain extends DriveCommandLayer {
+public class DriveAutoHingedRamps extends DriveCommandLayer {
 	@Override
 	public void robotInit() {
 		// TODO Auto-generated method stub
@@ -19,7 +19,7 @@ public class DriveAutoRoughTerrain extends DriveCommandLayer {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "RoughTerrain";
+		return "ChevalDeFrise";
 	}
 
 }
