@@ -4,12 +4,14 @@ import org.usfirst.frc.team5332.robot.intake.base.IntakeHardwareLayer;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.TalonSRX;
+import edu.wpi.first.wpilibj.hal.PDPJNI;
 
 public class IntakeHardwareRoboRio extends IntakeHardwareLayer {
 
 	private TalonSRX intakeMotor;
 	private Solenoid intakePiston;
 	private Solenoid intakePiston2;
+	private PDPJNI PDP;
 
 	private boolean isExtended;
 	private double intakeSpeed;
@@ -19,7 +21,6 @@ public class IntakeHardwareRoboRio extends IntakeHardwareLayer {
 		intakeMotor.set(intakeSpeed);
 		intakePiston.set(isExtended);
 		intakePiston2.set(isExtended);
-
 	}
 
 	@Override
@@ -29,6 +30,7 @@ public class IntakeHardwareRoboRio extends IntakeHardwareLayer {
 		intakePiston2 = new Solenoid(1);
 		isExtended = false;
 		intakeSpeed = 0.0;
+		PDP = new PDPJNI();
 	}
 
 	@Override
@@ -65,6 +67,11 @@ public class IntakeHardwareRoboRio extends IntakeHardwareLayer {
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public double getCurrent() {
+		return PDP.getPDPTotalCurrent(0);
 	}
 
 }

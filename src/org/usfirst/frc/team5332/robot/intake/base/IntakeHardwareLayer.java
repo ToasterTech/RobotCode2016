@@ -10,5 +10,6 @@ public abstract class IntakeHardwareLayer implements BaseLayer {
 	public abstract boolean isPistonExtended();
 	public abstract boolean isPistonRetracted();
 	public abstract double getIntakeSpeed();
+	public abstract double getCurrent();
 
 }

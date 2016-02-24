@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5332.robot.intake;
 
+import org.usfirst.frc.team5332.robot.PID;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeHardwareLayer;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeSystemLayer;
 
@@ -11,6 +12,7 @@ public class IntakeSystem extends IntakeSystemLayer {
 	private boolean isIntakeDown;
 	private boolean isIntaking;
 	private boolean isStopped;
+	private PID motorCurrentPID;
 	
 	@Override
 	public void setChild(IntakeHardwareLayer c) {
@@ -25,7 +27,7 @@ public class IntakeSystem extends IntakeSystemLayer {
 			hardwareLayer.runIntakeMotor(intakeSpeed);
 		else if (!isIntaking) // If we are not intaking but not stopped, outtake
 			hardwareLayer.runIntakeMotor(outtakeSpeed);
-		else hardwareLayer.runIntakeMotor(0); // If stupid things happen, suht down everything
+		else hardwareLayer.runIntakeMotor(0); // If stupid things happen, shut down everything
 		
 		if(isIntakeDown)
 			hardwareLayer.extendPiston(); // When the intake is down, the piston should be pushing it out because logic
