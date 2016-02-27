@@ -26,7 +26,6 @@ public class AutoSelector {
 		driveAutoMap.put(auto.getName(), auto);
 		auto=new DriveAutoRoughTerrain();
 		driveAutoMap.put(auto.getName(), auto);
-
 		
 	}
 	public IntakeCommandLayer getIntakeAuto(String input){

@@ -51,8 +51,11 @@ public class Robot extends IterativeRobot {
     	server.startAutomaticCapture("cam0");
 
 //    	chooser = new SendableChooser();
-////        chooser.addDefault("Default Auto", defaultAuto);
-////        chooser.addObject("My Auto", customAuto);
+//        chooser.addDefault("Drive Forward Auto", 0);
+//		  chooser.addObject("No Auto", -1);
+//        chooser.addObject("Cheval de Frise Auto", 1);
+//        chooser.addObject("Low Bar Auto", 2);
+//        chooser.addObject("Rough Terrain Auto", 3);
 //        SmartDashboard.putData("Auto choices", chooser);
     }
     
