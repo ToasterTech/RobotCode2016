@@ -19,7 +19,7 @@ public class DriveAutoHingedRamps extends DriveCommandLayer {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "ChevalDeFrise";
+		return "DriveChevalDeFrise";
 	}
 
 }

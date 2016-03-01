@@ -20,7 +20,7 @@ public class DriveAutoSimple extends DriveCommandLayer{
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "Auto Simple";
+		return "DriveSimple";
 	}
 
 	@Override
