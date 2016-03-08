@@ -39,7 +39,6 @@ public class DriveHardwareRoboRio extends DriveHardwareLayer{
 		LabviewDashboard.getDashboard().addData("EncoderLeft", this.getEncoderCountsL());
 		LabviewDashboard.getDashboard().addData("EncoderRight", this.getEncoderCountsR());
 		LabviewDashboard.getDashboard().addData("GyroReading", this.getAngle());
-		LabviewDashboard.getDashboard().addData("TestConstant", 1);
 	}
 
 	@Override

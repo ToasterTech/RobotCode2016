@@ -40,6 +40,7 @@ public class Robot extends IterativeRobot {
     SendableChooser chooser;
 
     public void robotInit() {
+    	LabviewDashboard.getDashboard().init();
     	drive=new Subsystem<DriveHardwareLayer,DriveSystemLayer,DriveCommandLayer>(new DriveHardwareRoboRio(),new DriveSystem(),new DriveTeleop());
     	drive.robotInit();
     	compressor=new Compressor();
