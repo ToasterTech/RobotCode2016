@@ -14,6 +14,7 @@ import org.usfirst.frc.team5332.robot.intake.base.IntakeCommandLayer;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeHardwareLayer;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeSystemLayer;
 
+import dashboard.LabviewDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -83,6 +84,9 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
     	drive.runPeriodic();
     	intake.runPeriodic();
+    	System.out.println(LabviewDashboard.getDashboard().getString("TestString"));
+    	LabviewDashboard.getDashboard().addData("TestConstant",1);
+    	LabviewDashboard.getDashboard().run();
     }
     
     public void testPeriodic() {

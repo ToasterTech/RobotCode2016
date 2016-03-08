@@ -2,6 +2,7 @@ package org.usfirst.frc.team5332.robot.drive;
 
 import org.usfirst.frc.team5332.robot.drive.base.DriveHardwareLayer;
 
+import dashboard.LabviewDashboard;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.TalonSRX;
@@ -35,6 +36,10 @@ public class DriveHardwareRoboRio extends DriveHardwareLayer{
 		driveLeft2.set(-leftSide);
 		driveRight1.set(rightSide);
 		driveRight2.set(rightSide);
+		LabviewDashboard.getDashboard().addData("EncoderLeft", this.getEncoderCountsL());
+		LabviewDashboard.getDashboard().addData("EncoderRight", this.getEncoderCountsR());
+		LabviewDashboard.getDashboard().addData("GyroReading", this.getAngle());
+		LabviewDashboard.getDashboard().addData("TestConstant", 1);
 	}
 
 	@Override
