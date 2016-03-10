@@ -31,7 +31,7 @@ public class IntakeTeleop extends IntakeCommandLayer{
 
 	@Override
 	public void runPeriodic() {
-		boolean dropIntakeButton=gamepad.getButton(5);
+		boolean dropIntakeButton=gamepad.getTriggerLeft()||gamepad.getTriggerLeft();
 		boolean hasBallButton=gamepad.getButton(6);
 		boolean lockIntakeButton=gamepad.getButton(7);
 		
@@ -61,9 +61,9 @@ public class IntakeTeleop extends IntakeCommandLayer{
 //					systemLayer.runIntake(); //If the intake is not down BUT not locked, run the intake
 //				else{systemLayer.stopIntake();} //If the intake is not down AND locked, do not run the intake
 //			else{systemLayer.runIntake();} //If the intake is down, run the intake
-		if (gamepad.getTriggerLeft())
+		if (gamepad.getButton(6 ))
 			systemLayer.runIntake();
-		else if(gamepad.getTriggerRight())
+		else if(gamepad.getButton(5))
 			systemLayer.runOuttake();
 		else
 			systemLayer.stopIntake();

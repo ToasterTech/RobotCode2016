@@ -26,10 +26,11 @@ public class LabviewDashboard extends DashboardBase{
 	public void run() {
 		// TODO Auto-generated method stub
 		for(String key:doubleValMap.keySet()){
+			System.out.println(key);
 			datatable.putNumber(key, doubleValMap.get(key));
 		}
 	}
-
+ 
 	
 	public static DashboardBase getDashboard() {
 		if(instance==null)
@@ -47,6 +48,12 @@ public class LabviewDashboard extends DashboardBase{
 	public String getString(String name) {
 		// TODO Auto-generated method stub
 		return datatable.getString(name, "NULL");
+	}
+	
+	@Override
+	public boolean getBoolean(String name) {
+		// TODO Auto-generated method stub
+		return datatable.getBoolean(name, false);
 	}
 	
 }
