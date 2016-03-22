@@ -23,7 +23,7 @@ public class DriveHardwareRoboRio extends DriveHardwareLayer{
 	public DriveHardwareRoboRio () {
 		driveLeft1 = new TalonSRX(1);
 		driveLeft2 = new TalonSRX(2);
-		driveRight1 = new TalonSRX(3);
+		driveRight1 = new TalonSRX(5); //WAS 3
 		driveRight2 = new TalonSRX(4);
 		encoderL = new Encoder(0,1);
 		encoderR = new Encoder(2,3);
@@ -34,7 +34,7 @@ public class DriveHardwareRoboRio extends DriveHardwareLayer{
 	public void runPeriodic() {
 		driveLeft1.set(-leftSide);
 		driveLeft2.set(-leftSide);
-		driveRight1.set(rightSide);
+		driveRight1.set(-rightSide);
 		driveRight2.set(rightSide);
 		LabviewDashboard.getDashboard().addData("EncoderLeft", this.getEncoderCountsL());
 		LabviewDashboard.getDashboard().addData("EncoderRight", this.getEncoderCountsR());

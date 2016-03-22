@@ -26,7 +26,6 @@ public class LabviewDashboard extends DashboardBase{
 	public void run() {
 		// TODO Auto-generated method stub
 		for(String key:doubleValMap.keySet()){
-			System.out.println(key);
 			datatable.putNumber(key, doubleValMap.get(key));
 		}
 	}

@@ -19,8 +19,6 @@ public class DriveSystem extends DriveSystemLayer {
 	@Override
 	public void runPeriodic() {
 		// TODO Auto-generated method stub
-		System.out.println("Gyro Angle "+this.hardwareLayer.getAngle());
-
 		hardwareLayer.setDriveLeft(l);
 		hardwareLayer.setDriveRight(r);
 	}
