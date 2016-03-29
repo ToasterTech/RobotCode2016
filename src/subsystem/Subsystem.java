@@ -20,6 +20,7 @@ public class Subsystem<H extends BaseLayer,S extends Layer<H>,C extends Layer<S>
 	public void setCommandLayer(C c){
 		commandLayer=c;
 		this.commandLayer.setChild(this.systemLayer);
+		this.commandLayer.robotInit();
 	}
 	public void robotInit(){
 		commandLayer.robotInit();

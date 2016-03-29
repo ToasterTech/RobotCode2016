@@ -3,7 +3,6 @@ package org.usfirst.frc.team5332.robot;
 import org.usfirst.frc.team5332.robot.drive.DriveHardwareRoboRio;
 import org.usfirst.frc.team5332.robot.drive.DriveSystem;
 import org.usfirst.frc.team5332.robot.drive.DriveTeleop;
-import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoAdvanced;
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoConfigurable;
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoSimple;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
@@ -12,7 +11,6 @@ import org.usfirst.frc.team5332.robot.drive.base.DriveSystemLayer;
 import org.usfirst.frc.team5332.robot.intake.IntakeHardwareRoboRio;
 import org.usfirst.frc.team5332.robot.intake.IntakeSystem;
 import org.usfirst.frc.team5332.robot.intake.IntakeTeleop;
-import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoAdvanced;
 import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoConfigurable;
 import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoSimple;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeCommandLayer;
@@ -94,15 +92,8 @@ public class Robot extends IterativeRobot {
     	System.out.println(runAuto);
     	timer = new Timer();
     	timer.start();
-    	if(runAuto && ! runAAuto){
         	drive.setCommandLayer(new DriveAutoConfigurable(runtime,invert,speed/*,doTimedStop,stopLength,stopWhen*/));
-        	intake.setCommandLayer(new IntakeAutoConfigurable(intakeUp,droptime));	
-    	}else if(runAAuto){
-    		drive.setCommandLayer(new DriveAutoAdvanced(autoObstacle, autoPosition, autoAction));
-    		intake.setCommandLayer(new IntakeAutoAdvanced(autoObstacle, autoPosition, autoAction));
-    	}else{
-    	
-    	}
+        	intake.setCommandLayer(new IntakeAutoConfigurable(intakeUp,droptime));
     }
 
     public void autonomousPeriodic() {
