@@ -85,4 +85,9 @@ public class DriveAutoConfigurable extends DriveCommandLayer{
 //			}
 		}
 	}
+	@Override
+	public boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

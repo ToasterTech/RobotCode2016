@@ -40,5 +40,10 @@ public class DriveTeleop extends DriveCommandLayer {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

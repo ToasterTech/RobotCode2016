@@ -38,5 +38,10 @@ public class DriveAutoSimple extends DriveCommandLayer{
 			systemLayer.setDriveHardwareRight(0);
 		}
 	}
+	@Override
+	public boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

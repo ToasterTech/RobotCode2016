@@ -82,5 +82,10 @@ public class IntakeTeleop extends IntakeCommandLayer{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public boolean getFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }

@@ -23,4 +23,10 @@ public class IntakeAutoSimple extends IntakeCommandLayer {
 		return "IntakeSimple";
 	}
 
+	@Override
+	public boolean getFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

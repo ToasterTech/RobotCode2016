@@ -85,4 +85,10 @@ public class IntakeAutoAdvanced extends IntakeCommandLayer {
 		return "IntakeAdvanced";
 	}
 
+	@Override
+	public boolean getFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

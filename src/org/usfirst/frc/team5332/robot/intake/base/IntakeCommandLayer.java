@@ -7,4 +7,6 @@ public abstract class IntakeCommandLayer implements Layer<IntakeSystemLayer> {
 	public void setChild(IntakeSystemLayer c){
 		systemLayer=c;
 	}
+	
+	public abstract boolean getFinished();
 }
