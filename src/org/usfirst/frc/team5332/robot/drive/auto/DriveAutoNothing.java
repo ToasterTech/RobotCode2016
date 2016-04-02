@@ -2,18 +2,26 @@ package org.usfirst.frc.team5332.robot.drive.auto;
 
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
-import edu.wpi.first.wpilibj.Timer;
+import utils.time.ToasterTimer;
+import utils.time.WPITimer;
 
 public class DriveAutoNothing extends DriveCommandLayer{
 	
-	private Timer timer;
+	private ToasterTimer timer;
 	private boolean timerStarted;
 	protected double nothingTime;
 	protected boolean finished;
 	
+	public DriveAutoNothing(){
+		timer = new WPITimer(); // What time is it? I forgot my watch
+	}
+	
+	public DriveAutoNothing(ToasterTimer timerArg){
+		timer = timerArg;
+	}
+	
 	@Override
 	public void robotInit() {
-		timer = new Timer(); // What time is it? I forgot my watch
 		timerStarted = false; // Batteries not included
 		nothingTime = 2.0; // Power nap
 		finished = false; // I'm not done yet
@@ -42,7 +50,7 @@ public class DriveAutoNothing extends DriveCommandLayer{
 	@Override
 	public boolean isFinished() {
 		// TODO Auto-generated method stub
-		return false;
+		return finished;
 	}
 	
 }

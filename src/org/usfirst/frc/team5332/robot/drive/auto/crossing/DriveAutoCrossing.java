@@ -2,19 +2,28 @@ package org.usfirst.frc.team5332.robot.drive.auto.crossing;
 
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
-import edu.wpi.first.wpilibj.Timer;
+import utils.time.ToasterTimer;
+import utils.time.WPITimer;
 
 public abstract class DriveAutoCrossing extends DriveCommandLayer{
 	
 	protected boolean finished;
 	protected double driveTime;
 	protected double driveSpeed;
-	private Timer timer;
+	private ToasterTimer timer;
 	private boolean timerStarted;
+	
+	public DriveAutoCrossing(){
+		timer = new WPITimer();
+	}
+	
+	public DriveAutoCrossing(ToasterTimer timerArg){
+		timer = timerArg;
+		
+	}
 	
 	@Override
 	public void robotInit() {
-		timer = new Timer();
 		finished = false;
 		timerStarted = false;
 	}
@@ -31,7 +40,6 @@ public abstract class DriveAutoCrossing extends DriveCommandLayer{
 			timer.start();
 			timerStarted = true;
 		}
-		
 		if(timer.get()<driveTime){
 			systemLayer.setDriveHardwareLeft(driveSpeed);
 			systemLayer.setDriveHardwareRight(driveSpeed);

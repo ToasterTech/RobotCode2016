@@ -1,17 +1,20 @@
 // No, not stacking totes. Thank God.
 
-package org.usfirst.frc.team5332.robot.drive.auto.stack;
+package org.usfirst.frc.team5332.robot.drive.auto.queue;
 
+import java.util.ArrayDeque;
 import java.util.Queue;
-import java.util.Stack;
-
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
-public class DriveAutoStack extends DriveCommandLayer{
+public class DriveAutoQueue extends DriveCommandLayer{
 	
 	protected boolean finished;
 	protected Queue<DriveCommandLayer> autoQueue;
 	private DriveCommandLayer currentlyRunning;
+	
+	public DriveAutoQueue(){
+		autoQueue = new ArrayDeque<DriveCommandLayer>();
+	}
 	
 	@Override
 	public void robotInit() {

@@ -2,6 +2,8 @@ package org.usfirst.frc.team5332.robot.drive.auto.crossing;
 
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
+import utils.time.ToasterTimer;
+
 public class DriveCrossingLowGoal extends DriveAutoCrossing{
 	/*
 	 * Set the drive time
@@ -18,5 +20,10 @@ public class DriveCrossingLowGoal extends DriveAutoCrossing{
 		driveTime = 3;
 		driveSpeed=0.75;
 	}
-	
+
+	public DriveCrossingLowGoal(ToasterTimer timer) {
+		super(timer);
+		driveTime = 3;
+		driveSpeed=0.75;
+	}
 }
