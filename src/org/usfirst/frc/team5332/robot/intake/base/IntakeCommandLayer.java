@@ -8,5 +8,5 @@ public abstract class IntakeCommandLayer implements Layer<IntakeSystemLayer> {
 		systemLayer=c;
 	}
 	
-	public abstract boolean getFinished();
+	public abstract boolean isFinished();
 }

@@ -64,7 +64,7 @@ public class IntakeAutoConfigurable extends IntakeCommandLayer {
 	}
 
 	@Override
-	public boolean getFinished() {
+	public boolean isFinished() {
 		// TODO Auto-generated method stub
 		return false;
 	}
