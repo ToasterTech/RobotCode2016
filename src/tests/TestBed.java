@@ -8,7 +8,7 @@ import org.usfirst.frc.team5332.robot.drive.DriveHardwareSimulation;
 import org.usfirst.frc.team5332.robot.drive.DriveSystem;
 import org.usfirst.frc.team5332.robot.drive.DriveTeleop;
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoNothing;
-import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingCheval;
+import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingReachCheval;
 import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingRoughTerrain;
 import org.usfirst.frc.team5332.robot.drive.auto.queue.DriveAutoQueue;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;

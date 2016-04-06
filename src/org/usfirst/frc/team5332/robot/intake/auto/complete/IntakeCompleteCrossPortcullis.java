@@ -12,6 +12,9 @@ public class IntakeCompleteCrossPortcullis extends IntakeCommandLayer {
 	@Override
 	public void robotInit() {
 		queue = new IntakeAutoQueue();
+		queue.setChild(this.systemLayer);
+		queue.robotInit();
+
 		queue.addAutoLayer(new IntakeAutoDown());
 		queue.addAutoLayer(new IntakeAutoNothing(1000));
 	}
