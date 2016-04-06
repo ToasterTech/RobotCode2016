@@ -14,9 +14,6 @@ public class DriveCompleteCrossRock extends DriveCommandLayer {
 		queue = new DriveAutoQueue();
 		queue.addAutoLayer(new DriveAutoNothing());
 		queue.addAutoLayer(new DriveCrossingRockWall());
-		queue.setChild(this.systemLayer);
-		queue.robotInit();
-
 	}
 
 	@Override

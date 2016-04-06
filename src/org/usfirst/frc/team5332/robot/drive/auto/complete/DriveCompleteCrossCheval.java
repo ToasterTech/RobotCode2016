@@ -1,8 +1,8 @@
 package org.usfirst.frc.team5332.robot.drive.auto.complete;
 
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoNothing;
-import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingReachCheval;
-import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingCrossCheval;
+import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingCheval;
+import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingCheval2;
 import org.usfirst.frc.team5332.robot.drive.auto.queue.DriveAutoQueue;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
@@ -13,9 +13,9 @@ public class DriveCompleteCrossCheval extends DriveCommandLayer {
 	public void robotInit() {
 		queue = new DriveAutoQueue();
 		queue.addAutoLayer(new DriveAutoNothing());
-		queue.addAutoLayer(new DriveCrossingReachCheval());
-		queue.addAutoLayer(new DriveAutoNothing(.5));
-		queue.addAutoLayer(new DriveCrossingCrossCheval());
+		queue.addAutoLayer(new DriveCrossingCheval());
+		queue.addAutoLayer(new DriveAutoNothing());
+		queue.addAutoLayer(new DriveCrossingCheval2());
 
 		queue.setChild(this.systemLayer);
 		queue.robotInit();

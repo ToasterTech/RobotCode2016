@@ -14,9 +14,6 @@ public class DriveCompleteCrossPortcullis extends DriveCommandLayer {
 		queue = new DriveAutoQueue();
 		queue.addAutoLayer(new DriveAutoNothing());
 		queue.addAutoLayer(new DriveCrossingPortcullis());
-		queue.setChild(this.systemLayer);
-		queue.robotInit();
-
 	}
 
 	@Override

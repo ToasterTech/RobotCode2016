@@ -3,9 +3,8 @@ package org.usfirst.frc.team5332.robot.drive.auto.crossing;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
 import utils.time.ToasterTimer;
-import utils.time.WPITimer;
 
-public class DriveCrossingReachCheval extends DriveAutoCrossing{
+public class DriveCrossingCheval2 extends DriveAutoCrossing{
 	/*
 	 * Set the drive time
 	 * Set the drive speed
@@ -16,13 +15,15 @@ public class DriveCrossingReachCheval extends DriveAutoCrossing{
 	 * 
 	 * Also 3 and 0.75 are not the correct values so we should look into what the actual values are.
 	 */
-	public DriveCrossingReachCheval(ToasterTimer timer) {
-		super(timer);
+	
+	public DriveCrossingCheval2(){
 		driveTime = 3;
 		driveSpeed=0.75;
 	}
 
-	public DriveCrossingReachCheval(){
-		this(new WPITimer());
+	public DriveCrossingCheval2(ToasterTimer timer) {
+		super(timer);
+		driveTime = 3;
+		driveSpeed=0.75;
 	}
 }
