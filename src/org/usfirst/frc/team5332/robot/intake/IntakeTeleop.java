@@ -83,7 +83,7 @@ public class IntakeTeleop extends IntakeCommandLayer{
 		return null;
 	}
 	@Override
-	public boolean getFinished() {
+	public boolean isFinished() {
 		// TODO Auto-generated method stub
 		return false;
 	}
