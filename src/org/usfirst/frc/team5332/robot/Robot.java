@@ -4,7 +4,6 @@ import org.usfirst.frc.team5332.robot.drive.DriveHardwareRoboRio;
 import org.usfirst.frc.team5332.robot.drive.DriveSystem;
 import org.usfirst.frc.team5332.robot.drive.DriveTeleop;
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoConfigurable;
-import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoNothing;
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoSimple;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 import org.usfirst.frc.team5332.robot.drive.base.DriveHardwareLayer;
@@ -13,13 +12,11 @@ import org.usfirst.frc.team5332.robot.intake.IntakeHardwareRoboRio;
 import org.usfirst.frc.team5332.robot.intake.IntakeSystem;
 import org.usfirst.frc.team5332.robot.intake.IntakeTeleop;
 import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoConfigurable;
-import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoNothing;
 import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoSimple;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeCommandLayer;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeHardwareLayer;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeSystemLayer;
 
-import autoselect.AutoSelector;
 import dashboard.LabviewDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Compressor;
@@ -75,26 +72,38 @@ public class Robot extends IterativeRobot {
     	 * DriveCommandLayer auto=selector.select(networkTable.getAuto());
     	 * drive.setCommandLayer(auto);
     	 */
-
-    	boolean runAuto = LabviewDashboard.getDashboard().getBoolean("AARun");
-    	String autoMode= LabviewDashboard.getDashboard().getString("AutoMode");
-    	AutoSelector selector=new AutoSelector();
+    	boolean runAuto = LabviewDashboard.getDashboard().getBoolean("RunAuto");
+    	double runtime = LabviewDashboard.getDashboard().getDouble("Runtime");
+    	double droptime = LabviewDashboard.getDashboard().getDouble("Droptime");
+    	double speed = LabviewDashboard.getDashboard().getDouble("Speed");
+    	boolean intakeUp = LabviewDashboard.getDashboard().getBoolean("IntakeUp");
+    	boolean invert = LabviewDashboard.getDashboard().getBoolean("Invert");
+    	
+    	double autoPosition = LabviewDashboard.getDashboard().getDouble("AAPosition");
+    	String autoObstacle = LabviewDashboard.getDashboard().getString("AAObstacle");
+    	String autoAction = LabviewDashboard.getDashboard().getString("AAAction");
+    	boolean runAAuto = LabviewDashboard.getDashboard().getBoolean("AARun");
+    	
+// 		TODO Cheval de Frise Auto NetworkTables
+//    	boolean doTimedStop = LabviewDashboard.getDashboard().getBoolean("Timedstop");
+//    	double stopLength = LabviewDashboard.getDashboard().getDouble("Stoplength");
+//    	double stopWhen = LabviewDashboard.getDashboard().getDouble("Stopwhen");
+    	
     	System.out.println(runAuto);
-    	System.out.println(autoMode);
-
-    	if(runAuto){
-	        drive.setCommandLayer(selector.getDriveAuto(autoMode));
-	       	intake.setCommandLayer(selector.getIntakeAuto(autoMode));
-    	}else{
-	        drive.setCommandLayer(new DriveAutoNothing());
-	       	intake.setCommandLayer(new IntakeAutoNothing(15));
-
-    	}
+    	timer = new Timer();
+    	timer.start();
+        	drive.setCommandLayer(new DriveAutoConfigurable(runtime,invert,speed/*,doTimedStop,stopLength,stopWhen*/));
+        	intake.setCommandLayer(new IntakeAutoConfigurable(intakeUp,droptime));
     }
 
     public void autonomousPeriodic() {
-    	drive.runPeriodic();
-    	intake.runPeriodic();
+    	boolean runAuto = LabviewDashboard.getDashboard().getBoolean("RunAuto");
+    	boolean runAAuto = LabviewDashboard.getDashboard().getBoolean("RunAuto");
+    	if(runAuto || runAAuto){
+    		System.out.println(timer.get());
+            	drive.runPeriodic();
+            	intake.runPeriodic();
+    	}
     }
     public void teleopInit(){
     	/*

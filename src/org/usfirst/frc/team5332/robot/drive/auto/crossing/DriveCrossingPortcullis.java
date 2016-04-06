@@ -23,7 +23,7 @@ public class DriveCrossingPortcullis extends DriveAutoCrossing{
 
 	public DriveCrossingPortcullis(ToasterTimer timer) {
 		super(timer);
-		driveTime = 5;
-		driveSpeed=0.60;
+		driveTime = 3;
+		driveSpeed=0.75;
 	}
 }

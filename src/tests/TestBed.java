@@ -14,14 +14,6 @@ import org.usfirst.frc.team5332.robot.drive.auto.queue.DriveAutoQueue;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 import org.usfirst.frc.team5332.robot.drive.base.DriveHardwareLayer;
 import org.usfirst.frc.team5332.robot.drive.base.DriveSystemLayer;
-import org.usfirst.frc.team5332.robot.intake.IntakeHardwareSimulation;
-import org.usfirst.frc.team5332.robot.intake.IntakeSystem;
-import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoDown;
-import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoNothing;
-import org.usfirst.frc.team5332.robot.intake.auto.queue.IntakeAutoQueue;
-import org.usfirst.frc.team5332.robot.intake.base.IntakeCommandLayer;
-import org.usfirst.frc.team5332.robot.intake.base.IntakeHardwareLayer;
-import org.usfirst.frc.team5332.robot.intake.base.IntakeSystemLayer;
 
 import subsystem.Subsystem;
 import utils.time.JavaTimer;
@@ -31,22 +23,22 @@ public class TestBed {
 	public static void main(String[] args) throws FileNotFoundException {
 		PrintStream out = new PrintStream(new FileOutputStream("RobotSimulationLog.txt"));
 		System.setOut(out);
-		IntakeAutoQueue autoStack = new IntakeAutoQueue();
-		autoStack.addAutoLayer(new IntakeAutoNothing(new JavaTimer()));
-		autoStack.addAutoLayer(new IntakeAutoDown());
-		Subsystem<IntakeHardwareLayer, IntakeSystemLayer, IntakeCommandLayer> intake;
-		intake= new Subsystem<IntakeHardwareLayer,IntakeSystemLayer,IntakeCommandLayer>(
-				new IntakeHardwareSimulation(),
-				new IntakeSystem(),
+		DriveAutoQueue autoStack = new DriveAutoQueue();
+		autoStack.addAutoLayer(new DriveAutoNothing(new JavaTimer()));
+		autoStack.addAutoLayer(new DriveCrossingRoughTerrain(new JavaTimer()));
+		Subsystem<DriveHardwareLayer, DriveSystemLayer, DriveCommandLayer> drive;
+		drive= new Subsystem<DriveHardwareLayer,DriveSystemLayer,DriveCommandLayer>(
+				new DriveHardwareSimulation(),
+				new DriveSystem(),
 				autoStack);
-		intake.robotInit();
+		drive.robotInit();
 		JavaTimer timer = new JavaTimer();
 		timer.start();
 		double timerLast = timer.get();
 		while(timer.get()<15){
 			if((timer.get()-timerLast) > 0.1){
 				System.out.println("Current Time:"+timer.get());
-				intake.runPeriodic();	
+				drive.runPeriodic();	
 				timerLast=timer.get();
 			}
 		}

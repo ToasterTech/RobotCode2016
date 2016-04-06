@@ -17,7 +17,7 @@ public class DriveAutoNothing extends DriveCommandLayer{
 	}
 	
 	public DriveAutoNothing(ToasterTimer timerArg){
-		timer = timerArg; // Thanks for loaning me yours
+		timer = timerArg;
 	}
 	
 	@Override
