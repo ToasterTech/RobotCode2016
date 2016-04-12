@@ -2,10 +2,11 @@ package org.usfirst.frc.team5332.robot.drive.auto.complete;
 
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoNothing;
 import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingRockWall;
+import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingRoughTerrain;
 import org.usfirst.frc.team5332.robot.drive.auto.queue.DriveAutoQueue;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
-public class DriveCompleteCrossRock extends DriveCommandLayer {
+public class DriveCompleteCrossRoughTerrain extends DriveCommandLayer {
 	
 	protected DriveAutoQueue queue;
 	
@@ -13,14 +14,14 @@ public class DriveCompleteCrossRock extends DriveCommandLayer {
 	public void robotInit() {
 		queue = new DriveAutoQueue();
 		queue.addAutoLayer(new DriveAutoNothing());
-		queue.addAutoLayer(new DriveCrossingRockWall());
+		queue.addAutoLayer(new DriveCrossingRoughTerrain());
 		queue.setChild(this.systemLayer);
 		queue.robotInit();
 	}
 
 	@Override
 	public String getName() {
-		return "CrossRockWall";
+		return "CrossRoughTerrain";
 	}
 
 	@Override

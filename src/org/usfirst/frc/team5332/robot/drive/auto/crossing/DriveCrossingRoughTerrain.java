@@ -19,12 +19,12 @@ public class DriveCrossingRoughTerrain extends DriveAutoCrossing{
 	
 	public DriveCrossingRoughTerrain(){
 		driveTime = 3;
-		driveSpeed=0.75;
+		driveSpeed = 0.75;
 	}
 
 	public DriveCrossingRoughTerrain(ToasterTimer timer) {
 		super(timer);
 		driveTime = 3;
-		driveSpeed=0.75;
+		driveSpeed = 0.75;
 	}
 }

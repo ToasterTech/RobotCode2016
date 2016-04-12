@@ -19,7 +19,7 @@ public class LabviewDashboard extends DashboardBase{
 		// TODO Auto-generated method stub
 		doubleValMap=new HashMap<String,Double>();
 		datatable = NetworkTable.getTable("Datatable");
-		
+		System.out.println("NT Connected: "+datatable.isConnected());
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class LabviewDashboard extends DashboardBase{
 	@Override
 	public String getString(String name) {
 		// TODO Auto-generated method stub
-		return datatable.getString(name, "NULL");
+		return datatable.getString(name, "Not Found");
 	}
 	
 	@Override

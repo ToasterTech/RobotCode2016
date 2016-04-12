@@ -18,8 +18,8 @@ public class DriveCrossingCheval extends DriveAutoCrossing{
 	 */
 	public DriveCrossingCheval(ToasterTimer timer) {
 		super(timer);
-		driveTime = 3;
-		driveSpeed=0.75;
+		driveTime = 1.5;
+		driveSpeed=0.3;
 	}
 
 	public DriveCrossingCheval(){

@@ -14,16 +14,27 @@ public class DriveAutoNothing extends DriveCommandLayer{
 	
 	public DriveAutoNothing(){
 		timer = new WPITimer(); // What time is it? I forgot my watch
+		nothingTime = 2.0;
+	}
+	
+	public DriveAutoNothing(double time){
+		timer = new WPITimer(); // What time is it? I forgot my watch
+		nothingTime = time;
+	}
+	
+	public DriveAutoNothing(ToasterTimer timerArg,double time){
+		timer = timerArg; // Thanks for loaning me yours
+		nothingTime = time; // Power nap
 	}
 	
 	public DriveAutoNothing(ToasterTimer timerArg){
 		timer = timerArg; // Thanks for loaning me yours
+		nothingTime = 2.0;
 	}
 	
 	@Override
 	public void robotInit() {
 		timerStarted = false; // Batteries not included
-		nothingTime = 2.0; // Power nap
 		finished = false; // I'm not done yet
 	}
 

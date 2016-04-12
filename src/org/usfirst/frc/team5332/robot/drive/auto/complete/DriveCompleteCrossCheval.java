@@ -14,9 +14,9 @@ public class DriveCompleteCrossCheval extends DriveCommandLayer {
 		queue = new DriveAutoQueue();
 		queue.addAutoLayer(new DriveAutoNothing());
 		queue.addAutoLayer(new DriveCrossingCheval());
-		queue.addAutoLayer(new DriveAutoNothing());
+		queue.addAutoLayer(new DriveAutoNothing(0.7));
 		queue.addAutoLayer(new DriveCrossingCheval2());
-
+//		queue.addAutoLayer(new DriveCrossingCheval2());
 		queue.setChild(this.systemLayer);
 		queue.robotInit();
 	}

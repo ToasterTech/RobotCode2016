@@ -4,7 +4,7 @@ import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
 import utils.time.ToasterTimer;
 
-public class DriveCrossingMoat extends DriveAutoCrossing{
+public class DriveCrossingCheval3 extends DriveAutoCrossing{
 	/*
 	 * Set the drive time
 	 * Set the drive speed
@@ -16,15 +16,14 @@ public class DriveCrossingMoat extends DriveAutoCrossing{
 	 * Also 3 and 0.75 are not the correct values so we should look into what the actual values are.
 	 */
 	
-	public DriveCrossingMoat(){
-		driveTime = 3.25;
-		driveSpeed = -1;
+	public DriveCrossingCheval3(){
+		driveTime = 5;
+		driveSpeed=0.9;
 	}
 
-	public DriveCrossingMoat(ToasterTimer timer) {
+	public DriveCrossingCheval3(ToasterTimer timer) {
 		super(timer);
-		driveTime = 3.25;
-		driveSpeed = -1;
-
+		driveTime = 5;
+		driveSpeed=0.9;
 	}
 }

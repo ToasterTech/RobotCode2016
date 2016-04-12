@@ -6,7 +6,7 @@ import org.usfirst.frc.team5332.robot.intake.auto.IntakeAutoUp;
 import org.usfirst.frc.team5332.robot.intake.auto.queue.IntakeAutoQueue;
 import org.usfirst.frc.team5332.robot.intake.base.IntakeCommandLayer;
 
-public class IntakeCompleteCrossRock extends IntakeCommandLayer {
+public class IntakeCompleteCrossMoat extends IntakeCommandLayer {
 	
 	protected IntakeAutoQueue queue;
 	
@@ -21,7 +21,7 @@ public class IntakeCompleteCrossRock extends IntakeCommandLayer {
 
 	@Override
 	public String getName() {
-		return "CrossRockWall";
+		return "CrossMoat";
 	}
 
 	@Override

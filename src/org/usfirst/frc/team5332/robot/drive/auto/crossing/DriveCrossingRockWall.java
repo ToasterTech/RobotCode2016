@@ -18,12 +18,12 @@ public class DriveCrossingRockWall extends DriveAutoCrossing{
 	
 	public DriveCrossingRockWall(){
 		driveTime = 3;
-		driveSpeed=0.75;
+		driveSpeed = -0.9;
 	}
 
 	public DriveCrossingRockWall(ToasterTimer timer) {
 		super(timer);
 		driveTime = 3;
-		driveSpeed=0.75;
+		driveSpeed = -0.9;
 	}
 }
