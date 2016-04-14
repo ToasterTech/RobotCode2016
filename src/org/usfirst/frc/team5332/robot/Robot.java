@@ -129,6 +129,7 @@ public class Robot extends IterativeRobot {
 		        drive.setCommandLayer(new DriveAutoNothing());
 		       	intake.setCommandLayer(new IntakeAutoNothing());
 	    	}
+	    	
     }
 
     public void autonomousPeriodic() {

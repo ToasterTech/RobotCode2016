@@ -2,8 +2,6 @@ package org.usfirst.frc.team5332.robot.drive.auto.complete;
 
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoNothing;
 import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingLowBar;
-import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingPortcullis;
-import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingPortcullis2;
 import org.usfirst.frc.team5332.robot.drive.auto.queue.DriveAutoQueue;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 

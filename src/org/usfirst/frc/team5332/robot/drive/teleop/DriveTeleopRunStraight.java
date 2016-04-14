@@ -10,7 +10,7 @@ public class DriveTeleopRunStraight extends DriveCommandLayer {
 	private Gamepad controller;
 	
 	public DriveTeleopRunStraight(Gamepad pad){
-		pad = controller;
+		controller = pad;
 	}
 	@Override
 	public void runPeriodic() {

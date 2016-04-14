@@ -17,13 +17,13 @@ public class DriveCrossingPortcullis extends DriveAutoCrossing{
 	 */
 	
 	public DriveCrossingPortcullis(){
-		driveTime = 1.8;
-		driveSpeed = 0.3;
+		driveTime = 5;
+		driveSpeed = 0.7;
 	}
 
 	public DriveCrossingPortcullis(ToasterTimer timer) {
 		super(timer);
-		driveTime = 1.8;
-		driveSpeed = 0.3;
+		driveTime = 5;
+		driveSpeed = 0.7;
 	}
 }

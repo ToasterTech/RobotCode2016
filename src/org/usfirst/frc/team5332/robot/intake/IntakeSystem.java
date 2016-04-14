@@ -12,6 +12,7 @@ public class IntakeSystem extends IntakeSystemLayer {
 	private boolean isIntakeDown;
 	private boolean isIntaking;
 	private boolean isStopped;
+	private boolean intakeSlow;
 	private PID motorCurrentPID;
 	
 	@Override
@@ -25,6 +26,8 @@ public class IntakeSystem extends IntakeSystemLayer {
 			hardwareLayer.runIntakeMotor(0); //Check this first to make sure that it ends if we are stopped
 		else if (isIntaking)
 			hardwareLayer.runIntakeMotor(intakeSpeed);
+		else if (intakeSlow)
+			hardwareLayer.runIntakeMotor(-0.25);
 		else if (!isIntaking) // If we are not intaking but not stopped, outtake
 			hardwareLayer.runIntakeMotor(outtakeSpeed);
 		else hardwareLayer.runIntakeMotor(0); // If stupid things happen, shut down everything
@@ -56,18 +59,28 @@ public class IntakeSystem extends IntakeSystemLayer {
 	public void runIntake() {
 		isStopped = false;
 		isIntaking = true;
+		intakeSlow = false;
 	}
 
 	@Override
 	public void stopIntake() {
 		isStopped = true;
 		isIntaking = false;
+		intakeSlow = false;
 	}
 
 	@Override
 	public void runOuttake(){
 		isStopped = false;
 		isIntaking = false;
+		intakeSlow = false;
+	}
+
+	@Override
+	public void runOuttakeSlow(){
+		isStopped = false;
+		isIntaking = false;
+		intakeSlow = true;
 	}
 
 	@Override

@@ -2,7 +2,6 @@ package org.usfirst.frc.team5332.robot.drive.auto.complete;
 
 import org.usfirst.frc.team5332.robot.drive.auto.DriveAutoNothing;
 import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingPortcullis;
-import org.usfirst.frc.team5332.robot.drive.auto.crossing.DriveCrossingPortcullis2;
 import org.usfirst.frc.team5332.robot.drive.auto.queue.DriveAutoQueue;
 import org.usfirst.frc.team5332.robot.drive.base.DriveCommandLayer;
 
@@ -14,8 +13,7 @@ public class DriveCompleteCrossPortcullis extends DriveCommandLayer {
 	public void robotInit() {
 		queue = new DriveAutoQueue();
 		queue.addAutoLayer(new DriveAutoNothing());
-		queue.addAutoLayer(new DriveCrossingPortcullis());
-		queue.addAutoLayer(new DriveCrossingPortcullis2());
+		queue.addAutoLayer(new DriveCrossingPortcullis()); 
 		queue.setChild(this.systemLayer);
 		queue.robotInit();
 	}

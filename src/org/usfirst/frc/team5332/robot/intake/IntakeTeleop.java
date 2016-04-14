@@ -26,7 +26,6 @@ public class IntakeTeleop extends IntakeCommandLayer{
 	@Override
 	public void setChild(IntakeSystemLayer c) {
 		 systemLayer = c;
-		 
 	}
 
 	@Override
@@ -54,6 +53,7 @@ public class IntakeTeleop extends IntakeCommandLayer{
 			systemLayer.dropIntake();
 		}else
 			systemLayer.raiseIntake();
+
 		
 //		if(gamepad.getTriggerLeft())
 //			if(!intakeDown)
@@ -61,10 +61,12 @@ public class IntakeTeleop extends IntakeCommandLayer{
 //					systemLayer.runIntake(); //If the intake is not down BUT not locked, run the intake
 //				else{systemLayer.stopIntake();} //If the intake is not down AND locked, do not run the intake
 //			else{systemLayer.runIntake();} //If the intake is down, run the intake
-		if (gamepad.getButton(6 ))
+		if (gamepad.getButton(6))
 			systemLayer.runIntake();
 		else if(gamepad.getButton(5))
 			systemLayer.runOuttake();
+		else if(gamepad.getButton(10))
+			systemLayer.runOuttakeSlow();
 		else
 			systemLayer.stopIntake();
 	}

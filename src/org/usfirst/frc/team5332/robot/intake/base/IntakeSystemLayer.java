@@ -9,5 +9,6 @@ public abstract class IntakeSystemLayer implements Layer<IntakeHardwareLayer> {
 	public abstract void runIntake();
 	public abstract void stopIntake();
 	public abstract void runOuttake();
+	public abstract void runOuttakeSlow();
 	
 }

@@ -10,7 +10,7 @@ public class DriveTeleopTankDrive extends DriveCommandLayer {
 	private Gamepad controller;
 	
 	public DriveTeleopTankDrive(Gamepad pad){
-		pad = controller;
+		controller = pad;
 	}
 	@Override
 	public void runPeriodic() {

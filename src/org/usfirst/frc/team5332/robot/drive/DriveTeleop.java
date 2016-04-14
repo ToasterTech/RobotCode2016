@@ -18,15 +18,15 @@ public class DriveTeleop extends DriveCommandLayer {
 	@Override
 	public void runPeriodic() {
 		// TODO Auto-generated method stub
-//		if(driveGamepad.getButton(0)||driveGamepad.getButton(2)){
-//			System.out.println("Driving Straight");
-//			driveStraight.runPeriodic();
-//		}else{
-//			System.out.println("Driving Tank");
-//			driveTank.runPeriodic();
-//		}
-		systemLayer.setDriveHardwareLeft(driveGamepad.getYLeft());
-		systemLayer.setDriveHardwareRight(driveGamepad.getYRight());
+		if(driveGamepad.getButton(1)||driveGamepad.getButton(3)){
+			System.out.println("Driving Straight");
+			driveStraight.runPeriodic();
+		}else{
+			System.out.println("Driving Tank");
+			driveTank.runPeriodic();
+		}
+//		systemLayer.setDriveHardwareLeft(driveGamepad.getYLeft());
+//		systemLayer.setDriveHardwareRight(driveGamepad.getYRight());
 
 //		if(driveGamepad.getButton(0)){
 //			systemLayer.gyroReset();
