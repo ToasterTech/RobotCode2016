@@ -18,7 +18,7 @@ public class DriveTeleop extends DriveCommandLayer {
 	@Override
 	public void runPeriodic() {
 		// TODO Auto-generated method stub
-		if(driveGamepad.getButton(1)||driveGamepad.getButton(3)){
+		if(driveGamepad.getTriggerLeft()){
 			System.out.println("Driving Straight");
 			driveStraight.runPeriodic();
 		}else{

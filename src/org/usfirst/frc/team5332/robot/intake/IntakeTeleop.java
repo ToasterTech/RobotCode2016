@@ -30,7 +30,7 @@ public class IntakeTeleop extends IntakeCommandLayer{
 
 	@Override
 	public void runPeriodic() {
-		boolean dropIntakeButton=gamepad.getTriggerLeft()||gamepad.getTriggerRight();
+		boolean dropIntakeButton=gamepad.getTriggerRight();
 		boolean hasBallButton=gamepad.getButton(6);
 		boolean lockIntakeButton=gamepad.getButton(7);
 		

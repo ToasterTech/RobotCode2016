@@ -52,7 +52,6 @@ public class DriveSystem extends DriveSystemLayer {
 		return ((averageDistance*(Math.PI*6))/hardwareLayer.getTicksPerRevolution());
 	}
 	
-
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
